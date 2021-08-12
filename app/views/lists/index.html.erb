@@ -1,11 +1,11 @@
-<h1>Mes Restaurants</h1>
+<h1>Mes listes</h1>
 
 <ul>
-  <% @restaurants.each do |restaurant| %>
+  <% @lists.each do |list| %>
     <li>
-      <%= link_to restaurant.name, restaurant_path(restaurant)  %>
+      <%= link_to list.name, list_path(list)  %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "Create a restaurant", new_restaurant_path %>
+<%= link_to "Create a list", new_list_path %>
