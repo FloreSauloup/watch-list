@@ -1,50 +1,19 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our films</h1>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @lists.count %> lists out of our <%= list.count %> on our website.</p>
-      <% else %>
-        <p>All <%= list.count %> films.</p>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row">
-    <% @lists.each do |list| %>
-      <div class="col-4">
-        <div class="list-card">
-          <div class="list-card-image" style="background-image: url('<%= list.picture_url %>')"></div>
-          <div class="list-card-content">
-            <div class="list-card-title">
-              <h4><%= list.name %></h4>
-            </div>
-            <p><%= list.address %></p>
-            <div class="flex">
-              <div class="flex">
-                <i class="material-icons mr-2">people</i><span><%= list.number_of_guests %></span>
-              </div>
-              <div class="flex ml-3">
-                <i class="material-icons mr-2">euro_symbol</i> <%= list.price_per_night %>
-              </div>
-            </div>
-          </div>
-          <div class="list-card-actions">
-            <%= link_to 'More info', list_path(list) %>
-            <%= link_to 'Edit', edit_list_path(list), class: 'ml-3 text-warning' %>
-            <%= link_to "Remove", list_path(list),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: 'ml-3 text-danger'
-            %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
   </div>
 </div>
+
+
+<h2>My lists</h2>
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= link_to list.name, list_path(list)  %>
+    </li>
+  <% end %>
+</ul>
+
+
+
+<%= link_to "Create a list", new_list_path %>
