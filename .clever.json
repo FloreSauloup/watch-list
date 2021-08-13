@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_f3f486aa-ecf9-43ae-abd8-760de58e7a38",
+      "org_id": "user_9fb53435-e260-4b34-b9ae-58e2c268a25b",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_f3f486aa-ecf9-43ae-abd8-760de58e7a38.git",
+      "name": "FLORE_MOVIE_LIST",
+      "alias": "FLORE_MOVIE_LIST"
+    }
+  ]
+}
